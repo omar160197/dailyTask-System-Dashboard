@@ -1,0 +1,92 @@
+.inputStyle {
+  height: 2rem;
+  font-size: 0.7rem !important;
+}
+
+.labelStyle {
+  font-size: 0.8rem;
+  margin-bottom: 0 !important;
+}
+.errorStyle {
+  color: red;
+  font-size: 0.7rem;
+}
+
+.saveButton {
+  width: 10% !important;
+  height: 35px !important;
+  background-image: linear-gradient(to right, #4facfe 40%, #02d1dc 100%);
+    color: white !important;
+  font-size: 15px !important;
+  margin-top: 3% !important;
+  border-radius: 10px !important;
+}
+
+.deleteButton {
+  width: 8% !important;
+  height: 35px !important;
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  color: white !important;
+  font-size: 15px !important;
+  margin-top: 3% !important;
+  margin-left: 2% !important;
+  border-radius: 10px !important;
+}
+
+.selectStyle {
+  width: 78%;
+  margin-left: 3%;
+  height: 2rem;
+  font-size: 0.7rem;
+}
+
+.selectorContainer {
+  margin-top: 2% !important;
+  width: 100% !important;
+}
+
+.addButton {
+  width: 7% !important;
+  height: 2rem !important;
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  color: white !important;
+  font-size: 0.9rem !important;
+  border-radius: 10px !important;
+}
+.headerCell {
+  font-size: 12px !important;
+  text-align: center !important;
+}
+.dataCell {
+  font-size: 11px !important;
+  text-align: center !important;
+}
+.tableDeleteButton {
+  color: red !important;
+  font-size: 11px !important;
+}
+.progress {
+  color: #f62d37 !important;
+}
+.progressContainer {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+.inProgressStyle {
+  background-color: #e0f2f1;
+}
+.completedStyle{
+text-decoration: line-through;
+}
+.high{
+color: red !important;
+font-weight: bold !important;
+}
+.low{
+color: green !important;
+}
+.medium{
+color: #ff9800 !important
+}
