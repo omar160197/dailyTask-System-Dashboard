@@ -14,15 +14,15 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import SummarizeIcon from '@mui/icons-material/Summarize';
-import AssessmentIcon from '@mui/icons-material/Assessment';
+import SummarizeIcon from "@mui/icons-material/Summarize";
+import AssessmentIcon from "@mui/icons-material/Assessment";
 import { useNavigate } from "react-router-dom";
 import Profile from "../../component/profile/profile";
 import { useDispatch, useSelector } from "react-redux";
 import { reset } from "../../store/users/userSlice";
 import ViewTasks from "../../component/tasks/viewTasks";
 import Summary from "../../component/summry/summary";
-
+import styles from "./home.module.css";
 const drawerWidth = 250;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -95,14 +95,10 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box className={styles.homeContainer}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ backgroundColor: "white", height: "9%" }}
-        open={open}
-      >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+      <AppBar position="fixed" className={styles.appBarStyle} open={open}>
+        <Toolbar className={styles.toolBarStyle}>
           <div>
             <IconButton
               color="inherit"
@@ -111,7 +107,7 @@ export default function PersistentDrawerLeft() {
               edge="start"
               sx={{ mr: 0, ...(open && { display: "none" }) }}
             >
-              <MenuIcon sx={{ color: "black", fontSize: "20px" }} />
+              <MenuIcon className={styles.appBarIconStyle} />
             </IconButton>
           </div>
           <div>
@@ -134,7 +130,7 @@ export default function PersistentDrawerLeft() {
         open={open}
       >
         <DrawerHeader>
-          <h5 style={{ marginRight: "17%", marginTop: "5%" }}>Daily Work</h5>
+          <h5 className={styles.drawerTitle}>Daily Work</h5>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
@@ -147,13 +143,11 @@ export default function PersistentDrawerLeft() {
         {user && user.email !== "admin@gmail.com" && (
           <List>
             <ListItem
-              sx={{
-                paddingY: "1%",
-                backgroundColor: `${currentPage === "Report" ? "#FFF1F0" : ""}`,
-                borderRight: `${
-                  currentPage === "Report" ? "solid 3px #f62d37" : ""
-                }`,
-              }}
+              className={
+                currentPage === "Report"
+                  ? styles.listItemSelect
+                  : styles.listItemNonSelect
+              }
               disablePadding
               onClick={() => {
                 setCurrentPage("Report");
@@ -163,58 +157,47 @@ export default function PersistentDrawerLeft() {
                 <ListItemIcon>
                   {
                     <SummarizeIcon
-                      sx={{
-                        fontSize:"1.3rem",
-                        color: `${currentPage === "Report" ? "#f62d37" : ""}`,
-                      }}
+                      className={
+                        currentPage === "Report" ? styles.tabIconStyle : ""
+                      }
                     />
                   }
                 </ListItemIcon>
                 <ListItemText
-                  sx={{ 
-                    fontSize:"1.3rem",
-                    color: `${currentPage === "Report" ? "#f62d37" : ""}` }}
+                  className={`${styles.listItemNonSelect} ${
+                    currentPage === "Report" ? styles.tabStyle : ""
+                  }`}
                   primary={"Report"}
                 />
               </ListItemButton>
             </ListItem>
             <ListItem
+              className={
+                currentPage === "Summary"
+                  ? styles.listItemSelect
+                  : styles.listItemNonSelect
+              }
               disablePadding
-              sx={{
-                paddingY: "1%",
-                fontSize:"1.3rem",
-                backgroundColor: `${
-                  currentPage === "Summary" ? "#FFF1F0" : ""
-                }`,
-                borderRight: `${
-                  currentPage === "Summary" ? "solid 3px #f62d37" : ""
-                }`,
-              }}
               onClick={() => setCurrentPage("Summary")}
             >
               <ListItemButton>
                 <ListItemIcon>
                   {
                     <AssessmentIcon
-                      sx={{
-                        fontSize:"1.3rem",
-                        color: `${currentPage === "Summary" ? "#f62d37" : ""}`,
-                      }}
+                      className={
+                        currentPage === "Summary" ? styles.tabIconStyle : ""
+                      }
                     />
                   }
                 </ListItemIcon>
                 <ListItemText
-                  sx={{
-                    color: `${currentPage === "Summary" ? "#f62d37" : ""}`,
-                  }}
+                  className={currentPage === "Summary" ? styles.tabStyle : ""}
                   primary={"Summary"}
                 />
               </ListItemButton>
             </ListItem>
           </List>
         )}
-
-       
       </Drawer>
 
       {user && user.username !== "Admin" && (
@@ -225,7 +208,6 @@ export default function PersistentDrawerLeft() {
           {currentPage === "Summary" && <Summary userId={user && user._id} />}
         </Main>
       )}
-
     </Box>
   );
 }

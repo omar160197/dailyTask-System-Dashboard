@@ -1,11 +1,11 @@
 .inputStyle {
   height: 2rem;
-  font-size: 0.7rem !important;
+  font-size: 0.7rem;
 }
 
 .labelStyle {
   font-size: 0.8rem;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .errorStyle {
   color: red;
@@ -13,24 +13,24 @@
 }
 
 .saveButton {
-  width: 10% !important;
-  height: 35px !important;
+  width: 10%;
+  height: 35px;
   background-image: linear-gradient(to right, #4facfe 40%, #02d1dc 100%);
-    color: white !important;
-  font-size: 15px !important;
-  margin-top: 3% !important;
-  border-radius: 10px !important;
+  color: white;
+  font-size: 15px;
+  margin-top: 3%;
+  border-radius: 10px;
 }
 
 .deleteButton {
-  width: 8% !important;
-  height: 35px !important;
+  width: 8%;
+  height: 35px;
   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-  color: white !important;
-  font-size: 15px !important;
-  margin-top: 3% !important;
-  margin-left: 2% !important;
-  border-radius: 10px !important;
+  color: white;
+  font-size: 15px;
+  margin-top: 3%;
+  margin-left: 2%;
+  border-radius: 10px;
 }
 
 .selectStyle {
@@ -41,32 +41,32 @@
 }
 
 .selectorContainer {
-  margin-top: 2% !important;
-  width: 100% !important;
+  margin-top: 2%;
+  width: 100%;
 }
 
 .addButton {
-  width: 7% !important;
-  height: 2rem !important;
+  width: 7%;
+  height: 2rem;
   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-  color: white !important;
-  font-size: 0.9rem !important;
-  border-radius: 10px !important;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 10px;
 }
 .headerCell {
-  font-size: 12px !important;
-  text-align: center !important;
+  font-size: 12px;
+  text-align: center;
 }
 .dataCell {
-  font-size: 11px !important;
-  text-align: center !important;
+  font-size: 11px;
+  text-align: center;
 }
 .tableDeleteButton {
-  color: red !important;
-  font-size: 11px !important;
+  color: red;
+  font-size: 11px;
 }
 .progress {
-  color: #f62d37 !important;
+  color: #f62d37;
 }
 .progressContainer {
   display: flex;
@@ -74,19 +74,60 @@
   justify-content: center;
   align-items: center;
 }
+
 .inProgressStyle {
   background-color: #e0f2f1;
 }
-.completedStyle{
-text-decoration: line-through;
+
+.completedStyle {
+  text-decoration: line-through;
 }
-.high{
-color: red !important;
-font-weight: bold !important;
+
+.high {
+  color: red;
+  font-weight: bold;
 }
-.low{
-color: green !important;
+
+.low {
+  color: green;
 }
-.medium{
-color: #ff9800 !important
+
+.medium {
+  color: #ff9800;
+}
+
+
+.reportContainer {
+  background-color: white;
+  padding: 2%;
+}
+.reportTitle {
+  margin-bottom: 3%;
+  font-weight: bold;
+  font-family: tahoma;
+}
+.alertContainerStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alertStyle {
+  width: 1000px;
+  justify-content: center;
+}
+.addIconStyle {
+  margin-right: 3%;
+  color: white;
+}
+.tableContainer{
+  margin-top: 2%
+}
+.tableHeadStyle{
+  background-color: #F0F2F5
+}
+.buttonsContainer{
+  font-size: 11px;
+}
+.editButton{
+  font-size: 11px;
 }

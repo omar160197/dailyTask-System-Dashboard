@@ -8,17 +8,39 @@ import {
 } from "@mui/material";
 import { useSelector } from "react-redux";
 import Paper from "@mui/material/Paper";
+import styles from "./summary.module.css";
 
 const SummaryTable = () => {
   const { allTasks } = useSelector((state) => state.tasks);
 
-  const timeConvert = (totalHours, totalMinutes) => {
+  const convertMinutesToHours = (totalHours, totalMinutes) => {
     var num = totalMinutes;
     var hours = num / 60;
     var rhours = Math.floor(hours) + totalHours;
-    var minutes = (hours - rhours) * 60;
+    var minutes = (hours - Math.floor(hours)) * 60;
     var rminutes = Math.round(minutes);
+    if (rminutes <= 9) rminutes = "0" + rminutes;
+    if (rhours <= 9) rhours = "0" + rhours;
     return rhours + ":" + rminutes;
+  };
+
+  const sumOfHours = () => {
+    let totalHours = 0;
+    let totalMinutes = 0;
+    allTasks.forEach((val) => {
+      totalHours += +val.timeSpent.split(":")[0];
+      totalMinutes += +val.timeSpent.split(":")[1];
+    });
+    if (totalMinutes === 60) {
+      totalHours += 1;
+      return totalHours + ":00";
+    } else if (totalMinutes < 60) {
+      if (totalMinutes <= 9) totalMinutes = "0" + totalMinutes;
+      if (totalHours <= 9) totalHours = "0" + totalHours;
+      return totalHours + ":" + totalMinutes;
+    } else {
+      return convertMinutesToHours(totalHours, totalMinutes);
+    }
   };
 
   const iterator = (status) => {
@@ -32,12 +54,9 @@ const SummaryTable = () => {
       }).length;
   };
   return (
-    <TableContainer
-      component={Paper}
-      sx={{ marginTop: "2%", width: "40%", height: "90%" }}
-    >
-      <Table sx={{ width: "100%", height: "100%" }} aria-label="simple table">
-        <TableHead sx={{ backgroundColor: "#F0F2F5", height: "1%" }}>
+    <TableContainer component={Paper} className={styles.tableContainer}>
+      <Table className={styles.tableStyle} aria-label="simple table">
+        <TableHead className={styles.tableHeadStyle}>
           <TableRow>
             <TableCell>Summary</TableCell>
             <TableCell align="right"></TableCell>
@@ -105,9 +124,11 @@ const SummaryTable = () => {
                   }}
                 ></div>
                 <div>
-                  {parseFloat(
-                    (iterator("Completed") / iterator("---")) * 100
-                  ).toFixed(2)}
+                  {iterator("---") !== 0
+                    ? parseFloat(
+                        (iterator("Completed") / iterator("---")) * 100
+                      ).toFixed(2)
+                    : 0}
                   %
                 </div>
               </div>
@@ -121,7 +142,7 @@ const SummaryTable = () => {
             <TableCell component="th" scope="row">
               Grand Total
             </TableCell>
-            <TableCell align="right">10</TableCell>
+            <TableCell align="right">{sumOfHours()}</TableCell>
           </TableRow>
         </TableBody>
       </Table>

@@ -14,7 +14,6 @@ const EditTasks = ({ setEditPage }) => {
     from: Yup.string().required("Please Enter your start time"),
     to: Yup.string().required("Please Enter your end time"),
   });
-
   const formik = useFormik({
     initialValues: {
       date:selectedtask.date,  

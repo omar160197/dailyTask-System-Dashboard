@@ -1,0 +1,34 @@
+.homeContainer {
+  display: flex;
+}
+.tabStyle {
+  color: #f62d37;
+}
+.tabIconStyle {
+  color: #f62d37;
+}
+
+.listItemSelect {
+  font-size: 1.3rem;
+  background-color: #fff1f0;
+  border-right: solid 3px #f62d37;
+}
+
+.listItemNonSelect {
+  font-size: 1rem;
+}
+.appBarStyle {
+  background-color: white;
+  height: 9%;
+}
+.appBarIconStyle {
+  color: black;
+  font-size: 20px;
+}
+.drawerTitle {
+  margin-right: 17%;
+  margin-top: 5%;
+}
+.toolBarStyle{
+    justify-content: space-between
+}

@@ -6,7 +6,7 @@ export const getTasks =createAsyncThunk(
   async(id,thunkAPI) =>{
     const { rejectWithValue } = thunkAPI;
     try {
-        const res = await axios.get(`http://localhost:8080/dailyTasks/${id}`);
+        const res = await axios.get(`https://daily-work-reports.herokuapp.com/dailyTasks/${id}`);
         return res.data;
       } catch (error) {
         return rejectWithValue(error.message);
@@ -20,7 +20,7 @@ export const addTask = createAsyncThunk(
       console.log(taskData);
       const { rejectWithValue } = thunkAPI;
       try {
-        const res = await axios.post("http://localhost:8080/dailyTasks", taskData);
+        const res = await axios.post("https://daily-work-reports.herokuapp.com/dailyTasks", taskData);
         return res.data ;
       } catch (error) {
         return rejectWithValue(error.message);
@@ -36,7 +36,7 @@ export const addTask = createAsyncThunk(
       const {id} = allData
       const {taskdata} = allData
       try {
-        const res = await axios.put(`http://localhost:8080/dailyTasks/${id}`, { data: taskdata })
+        const res = await axios.put(`https://daily-work-reports.herokuapp.com/dailyTasks/${id}`, { data: taskdata })
         return res.data ;
       } catch (error) {
         return rejectWithValue(error.message);
@@ -52,7 +52,7 @@ export const addTask = createAsyncThunk(
         console.log(allData); 
       try {
 
-        const res = await axios.delete(`http://localhost:8080/dailyTasks/${id}`, { data: allData })
+        const res = await axios.delete(`https://daily-work-reports.herokuapp.com/dailyTasks/${id}`, { data: allData })
        
         return res.data ;
       } catch (error) {

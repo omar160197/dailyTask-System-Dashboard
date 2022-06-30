@@ -8,7 +8,7 @@ export const getUsers = createAsyncThunk(
   async (id, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const res = await axios.get(`http://localhost:8080/users`);
+      const res = await axios.get(`https://daily-work-reports.herokuapp.com/users`);
       return res.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -36,7 +36,7 @@ export const register = createAsyncThunk(
   async (userData, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const res = await axios.post("http://localhost:8080/users", userData);
+      const res = await axios.post("https://daily-work-reports.herokuapp.com/users", userData);
       if (res.data) {
         localStorage.setItem("user", JSON.stringify(res.data));
       }
@@ -54,7 +54,7 @@ export const login = createAsyncThunk(
   async (userData, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
-      const res = await axios.post("http://localhost:8080/login", userData, {
+      const res = await axios.post("https://daily-work-reports.herokuapp.com/login", userData, {
         headers: {
           "Content-type": "application/json;charset=UTF-8",
         },

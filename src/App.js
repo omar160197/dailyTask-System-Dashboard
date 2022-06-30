@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
 import themeLight from './theme/LightTheme/LightTheme';
 import {  BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -9,9 +8,7 @@ import LoginPage from './pages/login/loginPage';
 
 
 function App() {
-
   return (
-   
     <ThemeProvider theme={themeLight}>
       <CssBaseline />
       <BrowserRouter>
@@ -22,7 +19,6 @@ function App() {
       </Routes>
       </BrowserRouter>
     </ThemeProvider>
-     
   );
 }
 

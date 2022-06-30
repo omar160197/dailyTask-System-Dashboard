@@ -1,0 +1,16 @@
+.profileContainer {
+  margin-top: 2%;
+}
+.userNameStyle {
+  color: black;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 10%;
+}
+.profileIcon {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+.myProfileStyle {
+  font-size: 0.8rem;
+}

@@ -6,7 +6,7 @@
   height: 2rem;
 }
 .email:focus {
-  outline: none !important;
+  outline: none;
   border: 1px solid #df19fb;
   box-shadow: 0 0 10px #719ece;
 }
@@ -69,7 +69,7 @@
   font-size: 0.8rem;
   height: 2rem;
   font-weight: 600;
-  color: white !important;
+  color: white;
 }
 
 .submitEror {
@@ -116,9 +116,9 @@
   margin-top: 15%;
 }
 .toggelButton {
-  color: #2196f3 !important;
-  font-size: 0.8rem !important;
-  font-weight: 600 !important;
+  color: #2196f3;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .quessionTitle {
